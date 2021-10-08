@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "fee35d9a949241eefb47bef0486a4704",
+    "entities": [
+      {
+        "tableName": "Target",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`TargetID` INTEGER PRIMARY KEY AUTOINCREMENT, `month_number` REAL NOT NULL, `target_progress` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "TargetID",
+            "columnName": "TargetID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "MonthNumber",
+            "columnName": "month_number",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "TargetProgress",
+            "columnName": "target_progress",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "TargetID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"fee35d9a949241eefb47bef0486a4704\")"
+    ]
+  }
+}

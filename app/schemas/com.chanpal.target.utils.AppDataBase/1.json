@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "939d7d40bd8dfdd58c68726b3eed2b8a",
+    "entities": [
+      {
+        "tableName": "Coins",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`CoinsID` INTEGER PRIMARY KEY AUTOINCREMENT, `coins_date` REAL, `coins_number` REAL, `target_number` REAL, `month_number` REAL)",
+        "fields": [
+          {
+            "fieldPath": "CoinsID",
+            "columnName": "CoinsID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "CoinsDate",
+            "columnName": "coins_date",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "CoinsNumber",
+            "columnName": "coins_number",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "TargetNumber",
+            "columnName": "target_number",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "MonthNumber",
+            "columnName": "month_number",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "CoinsID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"939d7d40bd8dfdd58c68726b3eed2b8a\")"
+    ]
+  }
+}
